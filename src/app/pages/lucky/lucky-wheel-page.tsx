@@ -4,9 +4,10 @@ import React, {useEffect, useRef, useState} from 'react'
 // @ts-ignore
 import {LuckyWheel} from '@lucky-canvas/react'
 
-import {queryRaffleAwardList, draw } from '@/apis'
+import {queryRaffleAwardList, draw} from '@/apis'
 import {RaffleAwardVO} from "@/types/RaffleAwardVO";
 
+// @ts-ignore
 export function LuckyWheelPage() {
     const [prizes, setPrizes] = useState([{}])
     const myLucky = useRef()

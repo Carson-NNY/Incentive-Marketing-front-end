@@ -160,3 +160,61 @@ export const queryRaffleStrategyRuleWeight = (userId?: string, activityId?: numb
     }
 }
 
+
+export const queryUserCreditAccount = (userId?: string)=>{
+    try {
+        return fetch(`${apiHostUrl}/api/v1/raffle/activity/query_user_credit_account?userId=${userId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+    } catch (error) {
+        return fetch("{\n" +
+            "    \"code\": \"0001\",\n" +
+            "    \"info\": \"调用失败\",\n" +
+            "    \"data\": [\n" +
+            "}");
+    }
+}
+
+export const querySkuProductListByActivityId = (activityId?: number)=>{
+    try {
+        return fetch(`${apiHostUrl}/api/v1/raffle/activity/query_sku_product_list_by_activity_id?activityId=${activityId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        })
+    } catch (error) {
+        return fetch("{\n" +
+            "    \"code\": \"0001\",\n" +
+            "    \"info\": \"调用失败\",\n" +
+            "    \"data\": [\n" +
+            "}");
+    }
+}
+
+export const creditPayExchangeSku = (userId?: string, sku?: number) => {
+    try {
+        return fetch(`${apiHostUrl}/api/v1/raffle/activity/credit_pay_exchange_sku`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify({
+                userId: userId,
+                sku: sku
+            })
+        })
+    } catch (error) {
+        return fetch("{\n" +
+            "    \"code\": \"0001\",\n" +
+            "    \"info\": \"调用失败\",\n" +
+            "    \"data\": [\n" +
+            "}");
+    }
+}
+
+
+

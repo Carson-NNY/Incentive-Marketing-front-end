@@ -25,7 +25,7 @@ export function CalendarSign({handleRefresh}) {
         // 设置一个3秒后执行的定时器
         const timer = setTimeout(() => {
             handleRefresh()
-        }, 1500);
+        }, 150);
 
         // 清除定时器，以防组件在执行前被卸载
         return () => clearTimeout(timer);
